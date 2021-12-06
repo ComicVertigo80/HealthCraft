@@ -6,14 +6,10 @@ reading_xp = 15
 audio_xp = 10
 work_class_xp = 5
 
-########## Update Morning ###########
-
 lvl = 6
 xp = 599
 Nextlvl = 826
 
-
-########## Update Morning ###########
 
 ########## Daily Work ###########
 quests_today = (practice_xp * 4) + (class_xp * 20) + (reading_xp * 15) + (audio_xp * 15) + (work_class_xp * 15)
