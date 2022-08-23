@@ -1,5 +1,6 @@
-########## Journey ###########
-######## Add in Health XP tasks too? #########
+#!/usr/bin/env python3
+
+# Main variables here
 practice_xp = 30
 class_xp = 20
 reading_xp = 15
