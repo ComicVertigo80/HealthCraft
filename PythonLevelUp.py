@@ -29,7 +29,7 @@ Needed_xp = (Nextlvl - xp)
 current_lvl_percent = (xp / Nextlvl)
 needed_xp_percent = (Needed_xp / Nextlvl)
 bar_1 = "|" + (int((xp/5)) * '#') + "|"
-bar_2 =  "|" + (int((Needed_xp/5))) * '#' + "|"
+bar_2 = "|" + (int((Needed_xp/5))) * '#' + "|"
 
 
 print(" ")
