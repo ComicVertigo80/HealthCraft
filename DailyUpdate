@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html>
+<!-- 
+# One thing a day (can be broken up by day of the week)
+# 2-3h of Focus
+# Reduce speed until you act. Act sooner (ex. not end of week, but end of day)
+# Don't add more; 2-3 items tops; be consistent
+ -->
+
+<head>
+
+</head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>100 App - Web ProtoType</title>
+
+<style>
+html {
+  font-family: sans-serif;
+	}
+
+body {
+	background-color: lightcyan;
+}
+
+form {
+  width: 600px;
+  margin: 5px 100px;
+  padding: 2px;
+}
+
+h1, h2, h3 {
+  width:  600px;
+  margin: 5px 100px;
+  padding: 2px;
+}
+
+p {
+width:  600px;
+margin: 5px 100px;
+padding: 2px;
+}
+
+progress {
+width:  400px;
+height: 60px;
+margin: 5px 100px;
+padding: 2px;
+accent-color: orange;
+}
+
+hr {
+	width:  450px;
+	height: 1px;
+	margin: 5px 80px;
+	padding: 2px;
+	border-radius: 25px;
+	text-align: center;
+	background: linear-gradient(
+    90deg,
+    rgba(13, 8, 96, 1) 0%,
+    rgba(9, 9, 121, 1) 21%,
+    rgba(6, 84, 170, 1) 51%,
+    rgba(0, 255, 113, 1) 100%
+  );
+}
+
+#progressbutton {
+  width: 116px;
+  margin-left: 150px;
+  margin-right: 100px
+  padding: 5px;
+  border-radius: 25px
+}
+
+#inspirebutton {
+  width: auto;
+  margin-left: 200px;
+  border-radius: 25px
+}
+
+#xpbutton {
+  width: auto;
+  margin-left: 200px;
+  border-radius: 25px
+}
+
+
+
+
+canvas {
+	border: 2px solid black;
+	border-radius: 25px;
+	text-align: center;
+}
+
+</style>
+<body>
+	<h1>100 App - Web ProtoType</h1>
+
+	<canvas id="canvas" width='650px' height='40px'>
+
+	<p>Your computer doesn't support the canvas tag</p>
+
+	</canvas><br>
+<br>
+
+<!-- Buttons to increase and decrease values -->
+<button id= "progressbutton" type="button" onclick="dec();">Stopped -</button>
+<button id= "progressbutton" type="button" onclick="inc();">Completed +</button>
+<div>
+	<br>
+	<hr>
+	<h3>(One) Focus Action Today</h3><p id="oneAction"></p>
+	<form>
+		<input type="checkbox" class="check" name="option x" value="250">
+		<label style="color: lightseagreen;font-weight: 500; text-decoration: underline;" for="FocusAction">250xp</label>
+	</form>
+</div>
+
+<br>
+<hr>
+
+<div>
+	<br>
+	<h3>Daily Quests</h3>
+
+	<form>
+		<input type="checkbox" class="check" name="option x" value="100">
+		<label style="color: lightseagreen;font-weight: 500; text-decoration: underline;" for="FocusAction">100xp Focus Action (30m+)</label>
+
+		<br>
+		<input type="checkbox" class="check" name="option x" value="20">
+		<label for="defocus">20xp NSDR (Defocus)</label>
+		
+		<br>
+		<input type="checkbox" class="check" name="option x" value="20">
+		<label for="ayurvedic">20xp Ayurvedic Practice</label>
+
+		
+		<br>
+		<input type="checkbox" class="check" name="option x" value="30">
+		<label for="meditation">30xp Meditation</label>
+
+		
+		<br>
+		<input type="checkbox" class="check" name="option x" value="30">
+		<label for="exercise">30xp Exercise</label>
+
+		
+		<br>
+		<input type="checkbox" class="check" name="option x" value="20">
+		<label for="yoga-pelvic">20xp Yoga/Pelvic</label>
+
+
+		<br>
+		<input type="checkbox" class="check" name="option x" value="25">
+		<label for="journal">25xp Journal/write</label>
+
+		
+		<br>
+		<input type="checkbox" class="check" name="option x" value="25">
+		<label for="read">25xp Read</label>
+		
+	</form>
+</div>
+
+<br>
+<div>
+	<button onclick="handleClick()" id="xpbutton">XP Earned Today</button>
+</div>
+
+<br>
+
+<div class="container">
+		<!-- **** Manual Update EXPERIANCE / 10,000 **** -->
+	<p> <strong>Experiance</strong>: 490/10,000</p>
+		<!-- **** Manual Update  VALUE**** -->
+	<progress max="10000" value="490"></progress>
+
+	<h3>XP Earned today: </h3><p id="newXP"></p>
+
+	<!-- **** Manual Update Focus Sessions **** -->
+	<h3 style="color:mediumpurple;">Current level: 1</h3>
+	<p style="color:lightseagreen;">Past Focus Sessions: 6</p>
+
+</div>
+	
+	<br>
+	<hr>
+	<br>
+
+	<p> <strong>100 Videos Posted</strong>: 0/100</p>
+		<!-- **** Manual Update  VALUE**** -->
+	<progress max="100" value="0"></progress>
+<br>
+<br>
+	<p> <strong>100 KDP Created</strong>: 0/100</p>
+		<!-- **** Manual Update  VALUE**** -->
+	<progress max="100" value="0"></progress>
+<br>
+
+<hr>
+
+<br>
+
+<div>
+
+<br>
+	<p> <strong>100 Etsy Items</strong>: 0/100</p>
+		<!-- **** Manual Update  VALUE**** -->
+	<progress max="100" value="0"></progress>
+<br>
+<br>
+	<p> <strong>100 OS Contributions</strong>: 0/100</p>
+		<!-- **** Manual Update  VALUE**** -->
+	<progress max="100" value="0"></progress>
+<br>
+<br>
+	<p> <strong>100 Drawings</strong>: 0/100</p>
+		<!-- **** Manual Update  VALUE**** -->
+	<progress max="100" value="0"></progress>
+<br>
+</div>
+
+<br>
+
+<div>
+	<br>
+	<br>
+</div>
+
+<hr>
+<div>
+	<h3>Weekly Sprint List</h3>
+	<p>Updated: </p>
+	<button onclick="weeklyQuote()" id="inspirebutton">Inspire Today</button>
+
+	<br>
+	<br>
+
+	<p style="color:blue;">Past One Actions List x</p>
+</div>
+
+<hr>
+
+<script>
+
+/* Test for possible xp addition:
+
+const num1 = parseInt(prompt('Enter first number'));
+const num2 = parseInt(prompt('Enter second number'));
+
+const sum = num1 + num2;
+console.log(`The sum of ${num1} and ${num2} is ${sum}`);
+*/
+
+
+/*Your One Action entered here */
+
+const OneAction = prompt('Your One Action today is . . .');
+
+	var c = document.getElementById('canvas');
+
+	var ctx = c.getContext('2d');
+
+	var total = 100,
+
+	/* **** Manual Update - how many focus sessions load on page refresh */
+		focus = 6;
+
+
+window.onload = function() {
+	/* Fill Focus bar*/
+	ctx.fillStyle = "#FF0000";
+	ctx.fillRect(0,0,0,c.height);
+
+	/* Fill text Focus bar*/
+	ctx.fillStyle = '#000000';
+	ctx.font = "20px Arial";
+	var text = 'Focus Sessions: ' + focus + '/' + total;
+	ctx.fillText(text,225,35);
+}
+
+function inc () {
+	focus += 1;
+	var perc = focus / total;
+	var filled;
+	filled = perc * c.width;
+	
+	ctx.clearRect(0,0,c.width,c.height);
+
+	/* Fill Focus Bar*/
+	ctx.fillStyle = "#00FF00";
+	ctx.fillRect(0,0,filled,c.height);
+
+	if (focus >= total) {
+		focus = total;
+	}
+	
+	/* Fill text of Focus Bar */
+	ctx.fillStyle = '#000000';
+	ctx.font = "20px Arial";
+	var text = 'Focus Sessions: ' + focus + '/' + total;
+	ctx.fillText(text,225,35);
+	
+	
+}
+
+function dec () {
+	focus -= 1;
+	var perc = focus / total;
+	var filled;
+	filled = perc * c.width;
+	
+	ctx.clearRect(0,0,c.width,c.height);
+
+	/* Fill text of Focus Bar */
+	ctx.fillStyle = "#FFD700";
+	ctx.fillRect(0,0,filled,c.height);
+
+	if (focus <= 0) {
+		focus = 0;
+	}
+	
+	/* Fill text of Focus Bar */
+	ctx.fillStyle = '#000000';
+	ctx.font = "20px Arial";
+	var text = 'Focus Sessions: ' + focus + '/' + total;
+	ctx.fillText(text,225,35);
+}
+
+
+
+function weeklyQuote() {
+  window.alert("Close the OODA Loop. Have one focus today!");
+}
+
+
+function handleClick(){
+      var selected = document.getElementsByClassName("check");
+      var totals = 0;
+      for (var i = 0; i < selected.length; ++i) { 
+      if(selected[i].checked == true){
+         var xpEarned = parseInt((selected[i].value));
+         totals = totals + xpEarned;
+         var newXP = totals;
+         document.getElementById("newXP").innerHTML = newXP;
+     }
+
+ }
+ window.alert("XP Earned Today is: ..."+ (parseInt(totals, 10)) + ". Great job!");  
+
+};
+
+document.getElementById("newXP").innerHTML = 0;
+
+document.getElementById("oneAction").innerHTML = OneAction;
+
+
+</script>
+
+</body>
+
+ </html>
